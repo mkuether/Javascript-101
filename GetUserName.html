@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <script>
+  
+function GetUserName()
+{
+  //instatiator
+  var firstName;
+  var lastName;
+  var inputName;
+  var helloName;
+  var nameArray;
+  
+}
+
+GetUserName.prototype.getName = function()
+{
+  //method: getName
+this.inputName = window.prompt("Please input your last, then first name separated by a comma. ");
+}
+
+GetUserName.prototype.buildMessage = function()
+{
+  //method: buildMessage
+  this.nameArray = this.inputName.split(",")
+  this.firstName = this.nameArray[1].trim();
+  this.lastName = this.nameArray[0].trim();
+  this.helloName = "Hello, " + this.firstName + " " + this.lastName;
+//console.log("This is the buildMessage function");
+}
+
+//Instantiate object
+var myUser = new GetUserName();
+myUser.getName();
+myUser.buildMessage();
+alert(myUser.helloName);
+
+  </script>
+</head>
+  
+<body>
+  <center>
+    <h1>Title</h1>
+  </center>
+</body>
+</html>
